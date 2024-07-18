@@ -4,7 +4,7 @@ import type { Logger } from "@rbxts/log";
 import { PhysicsService } from "@rbxts/services";
 import { promiseTree } from "@rbxts/validate-tree";
 
-import type PlayerEntity from "server/player/player-entity";
+import type PlayerEntity from "server/services/player/player-entity";
 import type { ListenerData } from "shared/util/flamework-util";
 import { setupLifecycle } from "shared/util/flamework-util";
 import { addToCollisionGroup } from "shared/util/physics-util";

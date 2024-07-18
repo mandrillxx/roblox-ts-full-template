@@ -108,7 +108,9 @@ export default class SoundController implements OnInit, OnStart {
 			Enum.EasingDirection.Out,
 		);
 
-		TweenService.Create(soundObject, tweenInfo, { Volume: desiredVolume }).Play();
+		TweenService.Create(soundObject, tweenInfo, {
+			Volume: desiredVolume,
+		}).Play();
 	}
 
 	private makeSoundGroup(soundType: SoundType): SoundGroup {

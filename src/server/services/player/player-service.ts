@@ -8,7 +8,7 @@ import { Players } from "@rbxts/services";
 import Signal from "@rbxts/signal";
 
 import { $NODE_ENV } from "rbxts-transform-env";
-import PlayerEntity from "server/player/player-entity";
+import PlayerEntity from "server/services/player/player-entity";
 import type { PlayerData } from "shared/store/persistent";
 import type { ListenerData } from "shared/util/flamework-util";
 import { setupLifecycle } from "shared/util/flamework-util";

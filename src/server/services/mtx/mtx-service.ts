@@ -11,10 +11,10 @@ import type { PlayerData } from "shared/store/persistent";
 import { selectPlayerData, selectPlayerMtx } from "shared/store/persistent";
 import { GamePass, Product } from "types/enum/mtx";
 
-import type PlayerEntity from "./player/player-entity";
-import type { OnPlayerJoin } from "./player/player-service";
-import type PlayerService from "./player/player-service";
-import { store } from "./store";
+import { store } from "../../store";
+import type PlayerEntity from "../player/player-entity";
+import type PlayerService from "../player/player-service";
+import type { OnPlayerJoin } from "../player/player-service";
 
 const NETWORK_RETRY_DELAY = 2;
 const NETWORK_RETRY_ATTEMPTS = 10;

@@ -15,7 +15,8 @@ function start(): void {
 
 	Modding.registerDependency<Logger>(ctor => Log.ForContext(ctor));
 
-	Flamework.addPaths("src/client");
+	Flamework.addPaths("src/client/components");
+	Flamework.addPaths("src/client/controllers");
 
 	Log.Info(`Flamework ignite!`);
 	Flamework.ignite();

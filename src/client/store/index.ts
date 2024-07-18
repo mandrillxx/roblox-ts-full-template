@@ -6,6 +6,7 @@ import { $NODE_ENV } from "rbxts-transform-env";
 import { LOG_LEVEL } from "shared/functions/setup-logger";
 import { slices } from "shared/store";
 
+import { debugSlice } from "./debug/debug-slice";
 import { receiverMiddleware } from "./middleware/receiver";
 
 export type RootStore = typeof store;
@@ -14,6 +15,7 @@ export type RootState = InferState<RootStore>;
 export function createStore(): typeof store {
 	const store = combineProducers({
 		...slices,
+		debug: debugSlice,
 	});
 
 	store.applyMiddleware(receiverMiddleware());

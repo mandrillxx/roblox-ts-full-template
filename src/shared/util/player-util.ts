@@ -105,7 +105,7 @@ export function getPlayerByName(name: string): Player | undefined {
 		return;
 	}
 
-	return player;
+	return player as Player | undefined;
 }
 
 /**

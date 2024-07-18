@@ -4,6 +4,7 @@ export default style(
 	{
 		react: true,
 		rules: {
+			"@cspell/spellchecker": ["off"],
 			"perfectionist/sort-objects": [
 				"warn",
 				{
@@ -26,6 +27,13 @@ export default style(
 					ignoreEnums: true,
 					ignoreReadonlyClassProperties: true,
 					ignoreTypeIndexes: true,
+				},
+			],
+			"unicorn/filename-case": [
+				"error",
+				{
+					case: "kebabCase",
+					ignore: ["Server.ts"],
 				},
 			],
 		},

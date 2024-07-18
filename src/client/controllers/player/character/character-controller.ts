@@ -49,6 +49,44 @@ export default class CharacterController implements OnStart {
 	}
 
 	/**
+	 * Gets the current character for the local player or waits for it to be
+	 * loaded. This is either the character that has been loaded and exists or
+	 * the character that will be loaded and exists according to the schema.
+	 *
+	 * @returns The current character rig.
+	 */
+	public mustGet(): CharacterRig {
+		return this.getCurrentCharacter() ?? this.waitFor();
+	}
+
+	/**
+	 * Waits for the character to be loaded and exists according to the schema.
+	 *
+	 * @returns The character rig that was loaded.
+	 */
+	public waitFor(): CharacterRig {
+		return LocalPlayer.CharacterAdded.Wait()[0] as CharacterRig;
+	}
+
+	/**
+	 * Gets the humanoid of the current character.
+	 *
+	 * @returns The humanoid of the current character.
+	 */
+	public getHumanoid(): Humanoid | undefined {
+		return this.currentCharacter?.Humanoid;
+	}
+
+	/**
+	 * Gets the root part of the current character.
+	 *
+	 * @returns The root part of the current character.
+	 */
+	public getRoot(): BasePart | undefined {
+		return this.currentCharacter?.HumanoidRootPart;
+	}
+
+	/**
 	 * Ensures that a character model is loaded and exists according to the
 	 * schema. If the character model is removed before it loads, or if it fails
 	 * to load within the timeout, the promise will reject.

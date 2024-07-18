@@ -16,6 +16,10 @@ interface ClientToServerEvents {
 
 /** Fired by server to client. */
 interface ServerToClientEvents {
+	debug: {
+		/** Toggles the debug menu. */
+		toggleMenu: () => void;
+	};
 	store: {
 		/**
 		 * Sends state updates to the client.
